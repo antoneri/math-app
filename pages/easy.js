@@ -1,17 +1,30 @@
-import { Button } from "@material-ui/core";
+import { Button, ButtonGroup } from "@material-ui/core";
 import Link from "next/link";
+import { useState } from "react";
 import Seesaw from "./components/Seesaw";
 
+
 export default function Easy() {
+  const [flip, setFlip] = useState(false);
+
   return (
     <>
       <h1>Lätt svårighetsgrad</h1>
 
-      <Seesaw />
+      <Seesaw flip={flip}/>
 
-      <Link href="/">
-        <Button>Tillbaka</Button>
-      </Link>
+      <ButtonGroup variant="contained" color="primary">
+        <Button onClick={() => setFlip("left")}>Väster</Button>
+        <Button onClick={() => setFlip(false)}>Mitten</Button>
+        <Button onClick={() => setFlip("right")}>Höger</Button>
+      </ButtonGroup>
+
+
+      <div>
+        <Link href="/">
+          <Button>Tillbaka</Button>
+        </Link>
+      </div>
     </>
-  )
+  );
 }

@@ -18,13 +18,3 @@ a {
 main {
   margin: 4em auto;
 }
-
-@keyframes seesaw {
-  from {
-    transform: rotate(-10deg);
-  }
-
-  to {
-    transform: rotate(10deg);
-  }
-}
