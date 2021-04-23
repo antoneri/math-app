@@ -7,11 +7,21 @@ import Seesaw from "./components/Seesaw";
 export default function Easy() {
   const [flip, setFlip] = useState(false);
 
+  const random = Math.round(Math.random() * 100);
+
+  const text = random < 50 ? "mindre än 50 " : "större än 50"
+
   return (
     <>
       <h1>Lätt svårighetsgrad</h1>
 
-      <Seesaw flip={flip}/>
+      <ButtonGroup variant="contained" color="primary">
+        <Button onClick={() => setFlip("left")}>&lt;</Button>
+        <Button onClick={() => setFlip(false)}>=</Button>
+      </ButtonGroup>
+
+      <Seesaw flip={flip}>
+      </Seesaw>
 
       <ButtonGroup variant="contained" color="primary">
         <Button onClick={() => setFlip("left")}>Väster</Button>
