@@ -16,11 +16,11 @@ export default function Easy() {
       <h1>Lätt svårighetsgrad</h1>
 
       <ButtonGroup variant="contained" color="primary">
-        <Button onClick={() => setFlip("left")}>&lt;</Button>
-        <Button onClick={() => setFlip(false)}>=</Button>
+        <Button onClick={() => alert("Mindre än")}>&lt;</Button>
+        <Button onClick={() => alert("Lika med")}>=</Button>
       </ButtonGroup>
 
-      <Seesaw flip={flip}>
+      <Seesaw flip={flip} color="red">
       </Seesaw>
 
       <ButtonGroup variant="contained" color="primary">
